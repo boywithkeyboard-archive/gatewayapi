@@ -1,0 +1,41 @@
+{
+  "name": "gatewayapi",
+  "version": "1.0.0",
+  "author": "Samuel Kopp (https://samuelkopp.de)",
+  "license": "MIT",
+  "description": "A JavaScript SDK for GatewayAPI.",
+  "funding": "https://github.com/sponsors/boywithkeyboard",
+  "repository": "github:boywithkeyboard/gatewayapi",
+  "main": "./build/main.cjs",
+  "module": "./build/main.mjs",
+  "types": "./build/main.d.ts",
+  "files": [
+    "./build"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./build/main.mjs",
+        "types": "./build/main.d.ts"
+      },
+      "require": {
+        "default": "./build/main.cjs",
+        "types": "./build/main.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "build:cjs": "esbuild main.ts --bundle --minify --platform=node --format=cjs --target=es2022 --outfile=build/main.cjs",
+    "build:esm": "esbuild main.ts --bundle --minify --platform=node --format=esm --target=es2022 --outfile=build/main.mjs",
+    "build": "tsc && npm run build:cjs && npm run build:esm",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

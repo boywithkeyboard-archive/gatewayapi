@@ -36,7 +36,7 @@ function encode(data: ArrayBuffer | string): string {
 }
 
 export class SMS {
-  #token
+  #token: string
 
   constructor(options: {
     token: string

@@ -183,6 +183,6 @@ export class SMS {
       })
     })
   
-    return res
+    return await res.json()
   }
 }

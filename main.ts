@@ -44,7 +44,7 @@ export class SMS {
     this.#token = options.token
   }
 
-  async sendMessage(options: {
+  sendMessage = async (options: {
     /**
      * If specified, send status notifications to this URL. Otherwise use the default webhook if set.
      */
@@ -141,7 +141,7 @@ export class SMS {
      * Specified in seconds. If message is not delivered within this timespan, it will expire and you will get a notification. The minimum value is `60`. Every value under 60 will be set to `60`. The default expiry - and maximum - for all messages is 5 days. Some messages might expire before that.
      */
     validityPeriod?: number
-  }) {
+  }) => {
     const res = await fetch('https://gatewayapi.com/rest/mtsms', {
       method: 'POST',
       headers: {

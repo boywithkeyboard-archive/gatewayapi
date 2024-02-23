@@ -6,6 +6,15 @@
   "description": "JavaScript SDK for gatewayapi.",
   "funding": "https://github.com/sponsors/boywithkeyboard",
   "repository": "github:boywithkeyboard/gatewayapi",
+  "keywords": [
+    "gatewayapi",
+    "messaging",
+    "sdk",
+    "sms",
+    "short codes",
+    "virtual numbers",
+    "automation"
+  ],
   "main": "./build/main.cjs",
   "module": "./build/main.mjs",
   "types": "./build/main.d.ts",

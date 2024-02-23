@@ -5,7 +5,7 @@
 #### Deno
 
 ```ts
-import { SMS } from 'https://den.ooo/npm/gatewayapi'
+import { SMS } from 'https://esm.sh/gatewayapi'
 ```
 
 #### Node.js

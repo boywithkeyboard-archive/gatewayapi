@@ -34,8 +34,8 @@
     }
   },
   "scripts": {
-    "build:cjs": "esbuild main.ts --bundle --minify --platform=node --format=cjs --target=es2022 --outfile=build/main.cjs",
-    "build:esm": "esbuild main.ts --bundle --minify --platform=node --format=esm --target=es2022 --outfile=build/main.mjs",
+    "build:cjs": "esbuild main.ts --bundle --minify --format=cjs --target=es2022 --outfile=build/main.cjs",
+    "build:esm": "esbuild main.ts --bundle --minify --format=esm --target=es2022 --outfile=build/main.mjs",
     "build": "tsc && npm run build:cjs && npm run build:esm",
     "prepublishOnly": "npm run build"
   },

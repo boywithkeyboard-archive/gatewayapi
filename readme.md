@@ -21,7 +21,7 @@ import { SMS } from 'gatewayapi'
 ### Usage
 
 > [!IMPORTANT]
-> You need to open a [gatewayapi](https://gatewayapi.com) account first to use this module.
+> You need to open a [gatewayapi](https://gatewayapi.com) account first to use this module. After you have signed up, you can create a new API token [here](https://gatewayapi.com/app/settings/api-oauth/).
 
 ```ts
 const { sendMessage } = new SMS({

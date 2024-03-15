@@ -43,7 +43,7 @@
     "@drgn/std": "^0.218.2",
     "@types/node": "^20.11.20",
     "esbuild": "^0.20.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   },
   "engines": {
     "node": ">=20"

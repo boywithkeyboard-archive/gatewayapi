@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@drgn/std": "^0.218.2",
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.11.30",
     "esbuild": "^0.20.2",
     "typescript": "^5.4.2"
   },

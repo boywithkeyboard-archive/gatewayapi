@@ -1,9 +1,9 @@
 {
   "name": "gatewayapi",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Samuel Kopp (https://samuelkopp.de)",
-  "license": "MIT",
-  "description": "JavaScript SDK for gatewayapi",
+  "license": "Apache-2.0",
+  "description": "JavaScript SDK for 📬 gatewayapi",
   "funding": "https://github.com/sponsors/boywithkeyboard",
   "repository": "boywithkeyboard/gatewayapi",
   "keywords": [
@@ -12,17 +12,15 @@
     "sdk",
     "sms",
     "short codes",
-    "virtual numbers",
-    "automation"
+    "virtual numbers"
   ],
   "scripts": {
-    "build": "builder index.ts:index.js",
-    "prepublishOnly": "npm run build"
+    "build": "builder index.ts:index.js"
   },
   "devDependencies": {
     "@boywithkeyboard/builder": "^0.12.0",
     "@drgn/std": "^0.218.2",
-    "@types/node": "^20.11.28",
-    "typescript": "^5.4.2"
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
   }
 }

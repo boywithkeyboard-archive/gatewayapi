@@ -1,42 +1,37 @@
-name: 'publish'
+name: publish
 
 on:
   push:
     tags:
-      - 'v*'
+      - v*
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      id-token: write
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: 'Retrieve tag'
-        run: echo "TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-      
-      - name: 'Publish release'
-        uses: actions/github-script@v7
+      - uses: actions/setup-node@v4
         with:
-          script: |
-            const { readFile } = require('fs/promises')
-              
-            let changelog = await readFile('./changelog.md', { encoding: 'utf-8' })
-              
-            const startIndex = changelog.indexOf(`## [${process.env.TAG}]`) + `## [${process.env.TAG}](https://github.com/boywithkeyboard/gatewayapi/releases/tag/${process.env.TAG})\n\n`.length
+          node-version: 20
 
-            changelog = changelog.substring(startIndex)
+      - name: Install Dependencies
+        run: npm ci
 
-            const endIndex = changelog.indexOf('\n\n## [')
+      - name: Build Package
+        run: npm run build
 
-            changelog = changelog.substring(0, endIndex < 0 ? undefined : endIndex)
+      - name: Publish Package
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./build
+          provenance: true
 
-            github.rest.repos.createRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              tag_name: process.env.TAG,
-              name: process.env.TAG,
-              body: changelog,
-              draft: false,
-              prerelease: false
-            })
+      - name: Publish Release
+        uses: boywithkeyboard/publisher@v3

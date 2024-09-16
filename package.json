@@ -21,6 +21,6 @@
     "@boywithkeyboard/builder": "^0.14.0",
     "@drgn/std": "^0.218.2",
     "@types/node": "^20.14.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.6.2"
   }
 }
